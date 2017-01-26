@@ -1,15 +1,57 @@
-import java.time.LocalDate;
 
 public class DateCounter {
+public static boolean isLeapYear(int year) {
+  if((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0))){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
-    /**
-     * Returns today's date as a three-element integer array in year-month-day order.
-     */
-     public static int[] today() {
-         LocalDate now = LocalDate.now();
-         return new int[] {
-             now.getYear(), now.getMonth().getValue(), now.getDayOfMonth()
-         };
-     }
+public static int daysInMonth(int year, int month){
+
+
+
+  if((month == 1)||(month == 3)||(month == 5)||(month == 7)||(month == 8)||(month == 10)||(month == 12)) {
+    return 31;
+  } else if ((month == 4)||(month == 6)||(month == 9)||(month == 11)){
+    return 30;
+  } else if ((month == 2)&&(isLeapYear(year))) {
+    return 29;
+  } else if ((month == 2)&&(!isLeapYear(year))) {
+    return 28;
+  }
+  else {
+    return -1;
+  }
+}
+
+public static boolean isValidDate(int year, int month, int day){
+  /*
+  boolean dateIsValid = true;
+    try {
+        LocalDate.of(year, month, day);
+    } catch (DateTimeException e) {
+        dateIsValid = false;
+    }
+    return dateIsValid;*/
+    return false;
+}
+
+public static int daysBetween(int year0, int month0, int day0, int year1, int month1, int day1){
+  return 42;
+}
+
+
+public static int ageInDays(int birthyear, int birthmonth, int birthday){
+  return 10;
+}
+
+/*public static void main(String[] args){
+  System.out.println(isLeapYear(2019));
+  System.out.println(daysInMonth(2016,2));
+
+}*/
 
 }
