@@ -28,14 +28,10 @@ public static int daysInMonth(int year, int month){
 }
 
 public static boolean isValidDate(int year, int month, int day){
-  /*
-  boolean dateIsValid = true;
-    try {
-        LocalDate.of(year, month, day);
-    } catch (DateTimeException e) {
-        dateIsValid = false;
-    }
-    return dateIsValid;*/
+  
+  if((year >= 0)&&(day <= daysInMonth(year, month))&&(month >= 1)&&(month <= 12)&&(day >= 1)) {
+    return true;
+  }
     return false;
 }
 
